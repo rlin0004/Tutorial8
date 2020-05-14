@@ -66,8 +66,8 @@ data1 <- data %>%
 head(data1)
 ```
 
-```{r fig1}
-data1 %>% dplyr::select(cases) %>%
+```{r table1}
+table1 <- data1 %>% dplyr::select(cases) %>%
 summary() %>%
 kable(caption = "COVID19 case summary") %>%
 kable_styling(bootstrap_options = c("striped", "hover"))
