@@ -73,4 +73,13 @@ kable(caption = "COVID19 case summary") %>%
 kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
+```{r}
+fig1 <- data1 %>% ggplot(aes(month, deaths)) + 
+  geom_histogram(stat = "identity") + 
+  facet_wrap(~ countriesAndTerritories, ncol = 1) +
+  xlab("Month") + 
+  ylab("Deaths")
+
+fig1
+```
 
