@@ -58,6 +58,13 @@ library(bookdown)
 data <- read.csv("Data/worldwidecases.csv")
 ```
 
+```{r data wrangling}
+
+data1 <- data %>% 
+  dplyr::filter(countriesAndTerritories %in% c("Japan", "Singapore"))
+
+head(data1)
+```
 
 
 
