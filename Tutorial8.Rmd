@@ -51,6 +51,24 @@ library(bookdown)
 \section*{Country XX1 and YY1"}
 Change1 - KK
 
+```{r}
+data_sect1 <- read_csv("C:/Users/kkabu/OneDrive/Documents/Tutorial8/Data/worldwidecases.csv")
+```
+
+Filtering GER and FRA
+```{r table}
+tab1 <- data_sect1 %>% filter(countriesAndTerritories %in% c("Germany", "France"))
+
+head(tab1)
+```
+
+Plotting
+```{r plot}
+plot1 <- tab1 %>% filter(month %in% c(4,5)) %>% ggplot(aes(x = day, y = deaths, color = countriesAndTerritories)) + geom_line() + facet_wrap(~month)
+plot1 + ggtitle("France and Germany Deaths Per Day for April and May")
+```
+
+
 \section*{Country XX2 and YY2}
 
 \section*{Country XX3 and YY3}
